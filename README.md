@@ -1,3 +1,2 @@
-# Web Sraping Thermometer
-An Analog thermometer made using a servo that takes live data from [Weather.com](https://Weather.com) and points the servo at an angle
-equal to the temprature shown on the website.
+# Web Sraping Projects
+Repo for the various web scraping projects I ve made

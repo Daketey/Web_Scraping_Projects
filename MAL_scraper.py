@@ -20,6 +20,7 @@ for anime_name , anime_tag , anime_type1 in zip(soup.find_all("td",class_='data 
     anime_url = requests.get(f'https://myanimelist.net/anime/{tag}/{anime_name.a.text}')
     soup1 = BeautifulSoup(anime_url.content , 'html.parser')
     episodes = soup1.find('div', class_="spaceit").text.split('\n  ')[1]
+    name_anime =soup1.find('div', class_="spaceit_pad").text.split(':')[1].split('\n')[0]
     #print(episodes)
     for dur in soup1.find_all('div', class_="spaceit"):
         if(dur.span.text=='Duration:'):
@@ -27,4 +28,6 @@ for anime_name , anime_tag , anime_type1 in zip(soup.find_all("td",class_='data 
             duration = dur.text.split('\n  ')[1]
             break 
             
-    print(anime_name.a.text,anime_type1.text,episodes,duration)
+    print(name_anime,anime_type1.text,episodes,duration)
+    
+    
